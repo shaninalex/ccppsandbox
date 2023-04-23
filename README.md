@@ -1,0 +1,3 @@
+# sdl2sandbox
+
+this is just testing and learning SDL2 repository...
