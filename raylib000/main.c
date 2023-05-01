@@ -42,6 +42,7 @@ int main(void)
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
+    Vector2 ballPosition = { screenWidth/2+40.0f, screenHeight/2+40.0f };
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -50,14 +51,14 @@ int main(void)
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
         //----------------------------------------------------------------------------------
-
+        ballPosition = GetMousePosition();
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
             ClearBackground(RAYWHITE);
-
             DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+            DrawRectangle(ballPosition.x - 40.0f, ballPosition.y - 40.0f, 80, 80, MAROON);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
