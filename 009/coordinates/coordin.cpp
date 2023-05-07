@@ -1,8 +1,9 @@
-#include <iostream>
-#include <cmath>
 #include "coordin.h"
+#include <cmath>
+#include <iostream>
 
-polar rect_to_polar(rect xypos)
+polar
+rect_to_polar(rect xypos)
 {
     polar answer;
     answer.distance = sqrt(xypos.x * xypos.x + xypos.y * xypos.y);
@@ -10,7 +11,8 @@ polar rect_to_polar(rect xypos)
     return answer;
 }
 
-void show_polar(polar dapos)
+void
+show_polar(polar dapos)
 {
     const double Rad_to_deg = 57.29577951;
     std::cout << "distance = " << dapos.distance;
