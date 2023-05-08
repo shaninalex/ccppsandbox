@@ -1,10 +1,8 @@
 #include <iostream>
 
-void
-oil(int x);
+void oil(int x);
 
-int
-main()
+int main()
 {
     using namespace std;
     int texas = 31;
@@ -15,7 +13,6 @@ main()
 
     cout << "In main(), year = " << year << ", &year = ";
     cout << &year << endl;
-
     oil(texas);
 
     cout << "In main(), texas = " << texas << ", &texas = ";
@@ -27,8 +24,7 @@ main()
     return 0;
 }
 
-void
-oil(int x)
+void oil(int x)
 {
     using namespace std;
     int texas = 5;
