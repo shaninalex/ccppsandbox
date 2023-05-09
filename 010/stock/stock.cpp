@@ -91,6 +91,3 @@ void Stock::show()
               << " Total Worth: $" << total_val << "\n";
 }
 
-Stock::~Stock()
-{
-}
