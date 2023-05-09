@@ -10,8 +10,9 @@ Unit::Unit(int x, int y, int w, int h, Color c) {
     color = c;
 }
 
-void Unit::draw() { 
-    DrawRectangle(posX - (width/2), posY - (height/2), width, height, color); 
+void Unit::draw() {
+    DrawRectangle(posX - (width / 2), posY - (height / 2), width, height,
+                  color);
 }
 
 void Unit::move(int x, int y) {

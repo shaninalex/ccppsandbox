@@ -1,7 +1,6 @@
 #include "raylib.h"
 #include "unit.h"
 
-
 int main() {
     const int screenWidth = 640;
     const int screenHeight = 480;
