@@ -9,11 +9,14 @@ class SelectionBox {
     int endY;
     bool selecting;
 
+    void resetPositions();
+
   public:
     SelectionBox();
     bool isSelecting();
+    void setSelection(bool t);
     void startSelection(int x, int y);
-    void endSelection();
+    void draw(int x, int y);
 };
 
 #endif // !__SELECTION_BOX_H__

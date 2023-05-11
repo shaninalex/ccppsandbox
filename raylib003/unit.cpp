@@ -2,6 +2,8 @@
 
 #include "raylib.h"
 
+Unit::~Unit() {}
+
 Unit::Unit(int x, int y, int w, int h, Color c) {
     posX = x;
     posY = y;

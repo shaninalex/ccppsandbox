@@ -1,5 +1,7 @@
 #include "raylib.h"
+#include "selectionbox.h"
 #include "unit.h"
+#include <iostream>
 
 int main() {
     const int screenWidth = 640;
@@ -7,23 +9,28 @@ int main() {
 
     InitWindow(screenWidth, screenHeight, "Raylib003");
     SetTargetFPS(60);
+    SelectionBox selectionbox = SelectionBox();
 
-    Unit unit = Unit(50, 50, 100, 100, GREEN);
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(RAYWHITE);
 
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
-            unit.move(GetMouseX(), GetMouseY());
+        if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
+            selectionbox.startSelection(GetMouseX(), GetMouseY());
+            selectionbox.setSelection(true);
         }
 
-        DrawText("Hello", screenWidth / 2, screenHeight / 2, 2, GREEN);
-        unit.draw();
+        if (IsMouseButtonUp(MOUSE_BUTTON_LEFT)) {
+            selectionbox.setSelection(false);
+        }
+
+        if (selectionbox.isSelecting()) {
+            selectionbox.draw(GetMouseX(), GetMouseY());
+        }
 
         EndDrawing();
     }
 
     CloseWindow();
-
     return 0;
 }
